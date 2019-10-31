@@ -1,0 +1,45 @@
+{
+    "title":"Version 1 of JWT header",
+    "type":"object",
+    "$id": "http://apicentre.paymentsnz.co.nz/schemas/JOSE-header-schema.json",
+    "definitions":{
+ 
+    },
+    "$schema":"http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "required":[
+       "alg",
+       "kid"
+    ],
+    "properties":{
+       "alg":{
+          "$id":"/properties/alg",
+          "type":"string",
+          "description":"The type of algorithm used to sign the JWT",
+          "examples":[
+             "PS256"
+          ],
+          "enum":[
+             "ES256", "PS256"
+          ]
+       },
+       "kid":{
+          "$id":"/properties/kid",
+          "type":"string",
+          "description":"The id of a public key or certificate used to sign the content or verify the signature",
+          "examples":[
+             "39cfac46-721f-46d5-8031-df6ae0dcb5f8"
+          ],
+          "pattern": "^(.+)$"
+       },
+       "typ":{
+          "$id":"/properties/typ",
+          "type":"string",
+          "description":"Used to denote the media type of the signed token. If included, the value must be 'JWT'.",
+          "enum": [ "JWT" ],
+          "examples":[
+             "JWT"
+          ]
+       }
+    }
+ }
