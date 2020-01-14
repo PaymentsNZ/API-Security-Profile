@@ -1,140 +1,118 @@
 {
-	"title": "Version 1 of ID Token JWT payload",
-	"$id": "http://apicentre.paymentsnz.co.nz/schemas/id-token-body-schema.json",
-	"type": "object",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"required": [
-		"iss",
-		"sub",
-		"aud",
-		"exp",
-		"iat",
-		"nonce",
-		"ConsentId",
-		"c_hash",
-		"s_hash"
-	],
-	"properties": {
-		"iss": {
-			"$id": "/properties/iss",
-			"type": "string",
-			"format": "uri",
-			"description": "Token issuer - e.g. https://secure.examplebank.co.nz/token",
-			"examples": [
-				"https://secure.examplebank.co.nz/token"
-			]
-		},
-		"sub": {
-			"$id": "/properties/sub",
-			"type": "string",
-			"description": "Subject Identifier, intended to be consumed by the Client. It must be a locally unique, never reassigned and opaque identifier within the Issuer for the End-User.",
-			"examples": [
-				"AItOawmwtWwcT0k51BayewNvutrJUqsvl6qs7A4"
-			]
-		},
-		"aud": {
-			"$id": "/properties/aud",
-			"description": "The audience for the token, must contain the Client ID of the third party.  May also contain other audiences.",
-			"oneOf": [{
-				"type": "string",
-				"examples": [
-					"third_party_client_id",
-					"sadUTdfTANIhditInecaqwEZdsUL"
-				]
-			}, {
-                "type": "array",
-				"items": {
-					"$id": "/properties/aud/items",
-					"type": "string"
-				},
-				"description": "Audience(s) that this ID Token is intended for. It MUST contain the OAuth 2.0 client_id of the Relying Party as an audience value.",
-				"examples": [
-					"third_party_client_id",
-					"ERVWyYqQM6AstKLmpuQdTiK8or02pe1i"
-				]
-			}]
-		},
-		"ConsentId": {
-			"$id": "/properties/ConsentId",
-			"type": "string",
-			"pattern": "^(.+)$",
-			"description": "The ID of the consent to which this token is related",
-			"examples": [
-				"20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"
-			]
-		},
-		"exp": {
-			"$id": "/properties/exp",
-			"type": "integer",
-			"description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
-			"examples": [
-				1496397168
-			]
-		},
-		"iat": {
-			"$id": "/properties/iat",
-			"type": "integer",
-			"description": "Time at which the JWT was issued.",
-			"examples": [
-				1496361168
-			]
-		},
-		"nonce": {
-			"$id": "/properties/nonce",
-			"type": "string",
-			"description": "OPTIONAL. String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token as the nonce claim. Clients MUST verify that the nonce claim value is equal to the value of the nonce parameter sent in the Authentication Request.",
-			"examples": [
-				"n-0S6_WzA2Mj"
-			]
-		},
-		"amr": {
-			"$id": "/properties/amr",
-			"type": "array",
-			"items": {
-				"$id": "/properties/amr/items",
-				"type": "string"
-			},
-			"description": "Authentication Methods References.",
-			"examples": [
-				"pwd"
-			]
-		},
-		"azp": {
-			"$id": "/properties/azp",
-			"type": "string",
-			"pattern": "^(.+)$",
-			"description": "Authorised party to which the token is issued.  This is the the third party, rather than the customer",
-			"examples": [
-				"20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"
-			]
-		},
-		"auth_time": {
-			"$id": "/properties/auth_time",
-			"type": "integer",
-			"description": "Time when the End-User authentication occurred.",
-			"examples": [
-				1496361168
-			]
-		},
-		"c_hash": {
-			"$id": "#/properties/c_hash",
-			"type": "string",
-			"title": "Code hash value",
-			"pattern": "^[a-zA-Z0-9_-]+$",
-			"description": "Base64 representation of the left-most half of the hash of the octets of authorization code, when hashed using the algorithm specified in 'alg'",
-			"examples": [
-				"dGhpc2lzYW5leGFtcGxlYXV0aG9yaXNhdGlvbmNvZGU"
-			]
-		},
-		"s_hash": {
-			"$id": "#/properties/s_hash",
-			"type": "string",
-			"title": "State hash value",
-			"pattern": "^[a-zA-Z0-9_-]+$",
-			"description": "Base64 representation of the left-most half of the hash of the octets of state, when hashed using the algorithm specified in 'alg'",
-			"examples": [
-				"dGhpc2lzYW5leGFtcGxlc3RhdGU"
-			]
-		}
-	}
+  "title": "Version 1 of ID Token JWT payload",
+  "$id": "http://apicentre.paymentsnz.co.nz/schemas/id-token-body-schema.json",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "required": [
+    "iss",
+    "sub",
+    "aud",
+    "exp",
+    "iat",
+    "nonce",
+    "ConsentId",
+    "c_hash",
+    "s_hash"
+  ],
+  "properties": {
+    "iss": {
+      "$id": "/properties/iss",
+      "type": "string",
+      "format": "uri",
+      "description": "Token issuer - e.g. https://secure.examplebank.co.nz/token",
+      "examples": ["https://secure.examplebank.co.nz/token"]
+    },
+    "sub": {
+      "$id": "/properties/sub",
+      "type": "string",
+      "description": "Subject Identifier, intended to be consumed by the Client. It must be a locally unique, never reassigned and opaque identifier within the Issuer for the End-User.",
+      "examples": ["AItOawmwtWwcT0k51BayewNvutrJUqsvl6qs7A4"]
+    },
+    "aud": {
+      "$id": "/properties/aud",
+      "description": "The audience for the token, must contain the Client ID of the third party.  May also contain other audiences.",
+      "oneOf": [
+        {
+          "type": "string",
+          "examples": ["third_party_client_id", "sadUTdfTANIhditInecaqwEZdsUL"]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$id": "/properties/aud/items",
+            "type": "string"
+          },
+          "description": "Audience(s) that this ID Token is intended for. It MUST contain the OAuth 2.0 client_id of the Relying Party as an audience value.",
+          "examples": [
+            "third_party_client_id",
+            "ERVWyYqQM6AstKLmpuQdTiK8or02pe1i"
+          ]
+        }
+      ]
+    },
+    "ConsentId": {
+      "$id": "/properties/ConsentId",
+      "type": "string",
+      "pattern": "^(.+)$",
+      "description": "The ID of the consent to which this token is related",
+      "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
+    },
+    "exp": {
+      "$id": "/properties/exp",
+      "type": "integer",
+      "description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
+      "examples": [1496397168]
+    },
+    "iat": {
+      "$id": "/properties/iat",
+      "type": "integer",
+      "description": "Time at which the JWT was issued.",
+      "examples": [1496361168]
+    },
+    "nonce": {
+      "$id": "/properties/nonce",
+      "type": "string",
+      "description": "OPTIONAL. String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token as the nonce claim. Clients MUST verify that the nonce claim value is equal to the value of the nonce parameter sent in the Authentication Request.",
+      "examples": ["n-0S6_WzA2Mj"]
+    },
+    "amr": {
+      "$id": "/properties/amr",
+      "type": "array",
+      "items": {
+        "$id": "/properties/amr/items",
+        "type": "string"
+      },
+      "description": "Authentication Methods References.",
+      "examples": ["pwd"]
+    },
+    "azp": {
+      "$id": "/properties/azp",
+      "type": "string",
+      "pattern": "^(.+)$",
+      "description": "Authorised party to which the token is issued.  This is the the third party, rather than the customer",
+      "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
+    },
+    "auth_time": {
+      "$id": "/properties/auth_time",
+      "type": "integer",
+      "description": "Time when the End-User authentication occurred.",
+      "examples": [1496361168]
+    },
+    "c_hash": {
+      "$id": "#/properties/c_hash",
+      "type": "string",
+      "title": "Code hash value",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "description": "Base64 representation of the left-most half of the hash of the octets of authorization code, when hashed using the algorithm specified in 'alg'",
+      "examples": ["dGhpc2lzYW5leGFtcGxlYXV0aG9yaXNhdGlvbmNvZGU"]
+    },
+    "s_hash": {
+      "$id": "#/properties/s_hash",
+      "type": "string",
+      "title": "State hash value",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "description": "Base64 representation of the left-most half of the hash of the octets of state, when hashed using the algorithm specified in 'alg'",
+      "examples": ["dGhpc2lzYW5leGFtcGxlc3RhdGU"]
+    }
+  }
 }
