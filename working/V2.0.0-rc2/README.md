@@ -1,6 +1,6 @@
-# V2.0-draft3 schemas
+# V2.0.0-rc2 schemas
 
-This folder contains schemas for the V2.0-draft3 security profile.  This includes:
+This folder contains schemas for the V2.0.0-rc2 security profile.  This includes:
 
 * Client authentication [schema](./client-authentication/jwt-bearer-auth-schema.json) (for use with `private_key_jwt` and `client_secret_jwt` authentication)
 * Hybrid flow authorization request [schema](./hybrid-flow/authorization-request-schema.json)
