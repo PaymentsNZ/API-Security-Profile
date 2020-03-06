@@ -6,6 +6,6 @@ This folder contains schemas for the V2.0.0-rc2 security profile.  This includes
 * Hybrid flow authorization request [schema](./hybrid-flow/authorization-request-schema.json)
 * CIBA decoupled flow relevant [schemas](./ciba-flow/README.md)
 * ID token [schema](./id-token/id-token-body-schema.json)
-* Generic JWS header [schema](./common/JOSE-header-schema.json)
+* Generic JWS (JOSE) header [schema](./common/JOSE-header-schema.json)
 
 These are assistive in nature, and supplementary to the Security Profile documentation.  It is highly recommended to follow that documentation first.
