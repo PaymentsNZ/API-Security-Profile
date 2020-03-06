@@ -4,4 +4,4 @@ This area is used to keep any security profile schema content that is under acti
 
 Currently under development is:
 
-* [V2.0-draft3](V2.0-draft3/README.md)
+* [V2.0.0-rc2](V2.0.0-rc2/README.md)
