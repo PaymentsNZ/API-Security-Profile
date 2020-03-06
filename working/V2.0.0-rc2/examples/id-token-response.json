@@ -1,0 +1,12 @@
+{
+    "iss": "https://api.alphabank.com",
+    "iat": 1234569795,
+    "auth_time": 1234569785,
+    "sub": "urn:alphabank-intent-58923",
+    "ConsentId": "urn:alphabank-intent-58923",
+    "aud": "s6BhdRkqt3",
+    "nonce": "n-0S6_WzA2Mj",
+    "exp": 1311281970,
+    "s_hash": "76sa5dd",
+    "c_hash": "asd097d"
+}

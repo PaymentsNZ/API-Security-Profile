@@ -1,0 +1,16 @@
+{
+  "name": "openbanking-schemas",
+  "version": "0.0.1",
+  "description": "Open Banking NZ schema validation",
+  "main": "index.js",
+  "author": "Nigel Somerfield <nigel@somerfield.co.nz>",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^6.10.2",
+    "chalk": "^2.4.2",
+    "command-line-args": "^5.1.1"
+  },
+  "scripts": {
+    "validate": "node index.js"
+  }
+}

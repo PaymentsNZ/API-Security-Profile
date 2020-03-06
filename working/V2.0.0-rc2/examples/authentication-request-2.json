@@ -1,0 +1,18 @@
+{
+    "aud": "https://api.examplebank.co.nz",
+    "iss": "thirdparty-client-id",
+    "response_type": "code id_token",
+    "client_id": "thirdparty-client-id",
+    "redirect_uri": "https://app.thirdparty.co.nz",
+    "scope": "openid payments",
+    "state": "YNynJYrcq?idasewrasdf",
+    "nonce": "dasc-rhshtma/jhsouen",
+    "claims": {
+      "id_token": {
+        "ConsentId": {
+          "value": "urn-examplebank-co-nz-12376793",
+          "essential": true
+        }
+      }
+    }
+  }

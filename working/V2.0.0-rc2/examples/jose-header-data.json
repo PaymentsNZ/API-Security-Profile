@@ -1,0 +1,5 @@
+{
+    "alg": "PS256",
+    "kid": "aJUfsnwEjAJdsVssIdf",
+    "typ": "JWT"
+}
