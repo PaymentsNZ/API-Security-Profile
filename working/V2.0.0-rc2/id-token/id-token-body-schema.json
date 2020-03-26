@@ -3,6 +3,7 @@
   "$id": "http://apicentre.paymentsnz.co.nz/schemas/id-token-body-schema.json",
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
   "required": [
     "iss",
     "sub",
@@ -74,23 +75,6 @@
       "type": "string",
       "description": "OPTIONAL. String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token as the nonce claim. Clients MUST verify that the nonce claim value is equal to the value of the nonce parameter sent in the Authentication Request.",
       "examples": ["n-0S6_WzA2Mj"]
-    },
-    "amr": {
-      "$id": "/properties/amr",
-      "type": "array",
-      "items": {
-        "$id": "/properties/amr/items",
-        "type": "string"
-      },
-      "description": "Authentication Methods References.",
-      "examples": ["pwd"]
-    },
-    "azp": {
-      "$id": "/properties/azp",
-      "type": "string",
-      "pattern": "^(.+)$",
-      "description": "Authorised party to which the token is issued.  This is the the third party, rather than the customer",
-      "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
     },
     "auth_time": {
       "$id": "/properties/auth_time",
