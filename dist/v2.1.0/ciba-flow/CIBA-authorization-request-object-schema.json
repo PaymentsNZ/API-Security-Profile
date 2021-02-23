@@ -1,0 +1,109 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://apicentre.paymentsnz.co.nz/schemas/CIBA-authorization-request-object-schema.json",
+  "type": "object",
+  "title": "The schema for the CIBA request object (OIDC/FAPI compliant)",
+  "additionalProperties": false,
+  "required": ["aud", "iss", "exp", "iat", "nbf", "jti", "scope", "ConsentId"],
+  "properties": {
+    "aud": {
+      "$id": "#/properties/aud",
+      "title": "The audiences for the token",
+      "description": "The value should be or include the client ID of the third party",
+      "oneOf": [
+        {
+          "type": "string",
+          "examples": ["https://api.alphanbank.com"],
+          "format": "uri"
+        },
+        {
+          "type": "array",
+          "$id": "#/properties/aud/items",
+          "items": {
+            "type": "string",
+            "pattern": "^(.+)$"
+          },
+          "examples": ["https://api.alphanbank.com"]
+        }
+      ]
+    },
+    "iss": {
+      "$id": "#/properties/iss",
+      "type": "string",
+      "title": "The Issuer of the token",
+      "description": "The value should be the client ID of the third party, unless signed by a different party",
+      "default": "",
+      "examples": ["s6BhdRkqt3"],
+      "pattern": "^(.+)$"
+    },
+    "exp": {
+      "$id": "/properties/exp",
+      "type": "integer",
+      "description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
+      "examples": [1496397168]
+    },
+    "iat": {
+      "$id": "/properties/iat",
+      "type": "integer",
+      "description": "Time at which the JWT was issued.",
+      "examples": [1496361168]
+    },
+    "nbf": {
+      "$id": "/properties/nbf",
+      "type": "integer",
+      "description": "The time before which the ID Token MUST NOT be accepted for processing.",
+      "examples": [1496397168]
+    },
+    "jti": {
+      "$id": "/properties/jti",
+      "type": "string",
+      "description": "The unique identifier of the current JWT token",
+      "examples": ["b8fd0a32-5e00-4b73-b3d8-b4af743b26e8"],
+      "pattern": "^(.+)$"
+    },
+    "scope": {
+      "$id": "#/properties/scope",
+      "type": "string",
+      "title": "The OAuth scopes requested",
+      "description": "Must include 'openid' and any other scopes required",
+      "default": "openid",
+      "examples": ["openid payments"],
+      "pattern": "^openid([ ].*)*$"
+    },
+    "ConsentId": {
+      "$id": "/properties/ConsentId",
+      "type": "string",
+      "pattern": "^(.+)$",
+      "description": "The ID of the consent to which this token is related",
+      "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
+    },
+    "client_notification_token": {
+      "$id": "#/properties/client_notification_token",
+      "type": "string",
+      "title": "The bearer token for third party ping callback",
+      "description": "The API provider must use this to authenticate to the third party for a ping notification",
+      "maxLength": 1024,
+      "pattern": "^[A-Za-z0-9\\-\\._~\\+\\/]+=*$",
+      "examples": [
+        "dGhpc2lzYXRlc3RzdHJpbmd1c2Vkb3RnZW5lcmF0ZWFiYXNlNjR0cmluZw=="
+      ]
+    },
+    "login_hint_token": {
+      "$id": "/properties/login_hint_token",
+      "type": "string",
+      "description": "A JWT token containing information to be used as a hint to the user identity"
+    },
+    "id_token_hint": {
+      "$id": "/properties/id_token_hint",
+      "type": "string",
+      "description": "An ID token that was previously issued to the third party being replayed as a hint to the user identity"
+    },
+    "requested_expiry": {
+      "$id": "/properties/requested_expiry",
+      "type": "integer",
+      "description": "A positive integer allowing the third party to request the expires_in value for auth_req_id the API provider will return",
+      "examples": [300]
+    }
+  }
+}
