@@ -1,0 +1,72 @@
+{
+    "title": "Version 1 of JARM response payload",
+    "$id": "http://apicentre.paymentsnz.co.nz/schemas/jarm-response-schema.json",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "required": [
+      "iss",
+      "code",
+      "aud",
+      "exp",
+      "state",
+      "ConsentId"
+    ],
+    "properties": {
+      "iss": {
+        "$id": "/properties/iss",
+        "type": "string",
+        "format": "uri",
+        "description": "Token issuer - e.g. https://secure.examplebank.co.nz/token",
+        "examples": ["https://secure.examplebank.co.nz/token"]
+      },
+      "code": {
+        "$id": "/properties/code",
+        "type": "string",
+        "description": "Authorization Code, to be exchanged for Access Token.",
+        "examples": ["AItOawmwtWwcT0k51BayewNvutrJUqsvl6qs7A4"]
+      },
+      "aud": {
+        "$id": "/properties/aud",
+        "description": "The audience for the token, must contain the Client ID of the third party.  May also contain other audiences.",
+        "oneOf": [
+          {
+            "type": "string",
+            "examples": ["third_party_client_id", "sadUTdfTANIhditInecaqwEZdsUL"]
+          },
+          {
+            "type": "array",
+            "items": {
+              "$id": "/properties/aud/items",
+              "type": "string"
+            },
+            "description": "Audience(s) that this ID Token is intended for. It MUST contain the OAuth 2.0 client_id of the Relying Party as an audience value.",
+            "examples": [
+              "third_party_client_id",
+              "ERVWyYqQM6AstKLmpuQdTiK8or02pe1i"
+            ]
+          }
+        ]
+      },
+      "ConsentId": {
+        "$id": "/properties/ConsentId",
+        "type": "string",
+        "pattern": "^(.+)$",
+        "description": "The ID of the consent to which this token is related",
+        "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
+      },
+      "exp": {
+        "$id": "/properties/exp",
+        "type": "integer",
+        "description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
+        "examples": [1496397168]
+      },
+      "state": {
+        "$id": "/properties/state",
+        "type": "string",
+        "description": "OPTIONAL. String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token as the nonce claim. Clients MUST verify that the nonce claim value is equal to the value of the nonce parameter sent in the Authentication Request.",
+        "examples": ["n-0S6_WzA2Mj"]
+      }
+    }
+  }
+  
