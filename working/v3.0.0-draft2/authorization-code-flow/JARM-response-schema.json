@@ -64,7 +64,7 @@
       "state": {
         "$id": "/properties/state",
         "type": "string",
-        "description": "OPTIONAL. String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token as the nonce claim. Clients MUST verify that the nonce claim value is equal to the value of the nonce parameter sent in the Authentication Request.",
+        "description": "The state value as sent by the client in the authorization request",
         "examples": ["n-0S6_WzA2Mj"]
       }
     }
