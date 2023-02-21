@@ -80,7 +80,7 @@
       "title": "The type of the response token",
       "default": "code id_token",
       "examples": ["code id_token"],
-      "pattern": "^code id_token$"
+      "enum": ["code id_token"]
     },
     "client_id": {
       "$id": "#/properties/client_id",
