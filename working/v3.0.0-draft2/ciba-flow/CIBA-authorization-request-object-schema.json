@@ -40,7 +40,7 @@
     "exp": {
       "$id": "/properties/exp",
       "type": "integer",
-      "description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
+      "description": "Expiration time on or after which the Request Object MUST NOT be accepted for processing.",
       "examples": [1496397168]
     },
     "iat": {
