@@ -19,7 +19,7 @@
       "expires_in": {
         "$id": "/properties/expires_in",
         "type": "integer",
-        "description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
+        "description": "Expiration time on or after which the request_uri MUST NOT be accepted for processing.",
         "examples": [1496397168]
       }
     }
