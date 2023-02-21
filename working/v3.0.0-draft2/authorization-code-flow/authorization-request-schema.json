@@ -104,7 +104,7 @@
     "redirect_uri": {
       "$id": "#/properties/redirect_uri",
       "type": "string",
-      "title": "The URI to which to redirect the customer User Agent",
+      "title": "The URI to which to redirect the customer User Agent after authorization",
       "default": "",
       "examples": ["https://api.mytpp.com/cb"],
       "format": "uri"
