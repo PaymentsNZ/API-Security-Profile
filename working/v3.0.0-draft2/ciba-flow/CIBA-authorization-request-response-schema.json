@@ -11,8 +11,9 @@
       "$id": "/properties/auth_req_id",
       "type": "string",
       "description": "This is a unique identifier for the authentication request made by the CIBA Client (third party)",
-      "format": "uuid",
-      "examples": ["1c266114-a1be-4252-8ad1-04986c5b9ac1"]
+      "minLength": 22,
+      "pattern": "^[a-zA-Z0-9.\\-_]{22,}$",
+      "examples": ["1c26_6114-a1be-4252-8ad1-04986c5b.9ac1"]
     },
     "expires_in": {
       "$id": "/properties/expires_in",
