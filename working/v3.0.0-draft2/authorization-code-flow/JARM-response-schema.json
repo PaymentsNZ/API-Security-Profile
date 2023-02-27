@@ -17,12 +17,14 @@
         "$id": "/properties/iss",
         "type": "string",
         "format": "uri",
+        "minLength": 1,
         "description": "Token issuer - e.g. https://secure.examplebank.co.nz/token",
         "examples": ["https://secure.examplebank.co.nz/token"]
       },
       "code": {
         "$id": "/properties/code",
         "type": "string",
+        "minLength": 1,
         "description": "Authorization Code, to be exchanged for Access Token.",
         "examples": ["AItOawmwtWwcT0k51BayewNvutrJUqsvl6qs7A4"]
       },
@@ -32,13 +34,15 @@
         "oneOf": [
           {
             "type": "string",
+            "minLength": 1,
             "examples": ["third_party_client_id", "sadUTdfTANIhditInecaqwEZdsUL"]
           },
           {
             "type": "array",
             "items": {
               "$id": "/properties/aud/items",
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "description": "Audience(s) that this ID Token is intended for. It MUST contain the OAuth 2.0 client_id of the Relying Party as an audience value.",
             "examples": [
@@ -52,6 +56,7 @@
         "$id": "/properties/ConsentId",
         "type": "string",
         "pattern": "^(.+)$",
+        "minLength": 1,
         "description": "The ID of the consent to which this token is related",
         "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
       },
@@ -64,6 +69,7 @@
       "state": {
         "$id": "/properties/state",
         "type": "string",
+        "minLength": 1,
         "description": "The state value as sent by the client in the authorization request",
         "examples": ["sadrewvdHASDTAW"]
       }
