@@ -14,6 +14,7 @@
       "required": ["subject_type"],
       "maxProperties": 2,
       "minProperties": 2,
+      "additionalProperties": false,
       "properties": {
         "subject_type": {
           "$id": "/properties/subject/properties/subject_type",
@@ -59,6 +60,67 @@
           "pattern": "^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_.+/=]*$"
         }
       }
+    },
+    "aud": {
+      "$id": "#/properties/aud",
+      "title": "The audiences for the login hint token",
+      "description": "The value should be or include the API Provider Issuer Identifier URL",
+      "oneOf": [
+        {
+          "type": "string",
+          "examples": ["https://api.alphanbank.com"],
+          "format": "uri"
+        },
+        {
+          "type": "array",
+          "$id": "#/properties/aud/items",
+          "items": {
+            "type": "string",
+            "pattern": "^(.+)$"
+          },
+          "examples": ["https://api.alphanbank.com"]
+        }
+      ]
+    },
+    "iat":{
+      "$id": "/properties/iat",
+      "type": "integer",
+      "description": "Time on which the login hint token was issued. May be used for determining age",
+      "examples": [1496397168]
+    },
+    "exp": {
+      "$id": "/properties/exp",
+      "type": "integer",
+      "description": "Expiration time on or after which the login hint token SHOULD NOT be accepted for processing.",
+      "examples": [1496397168]
+    },
+    "nbf": {
+      "$id": "/properties/nbf",
+      "type": "integer",
+      "description": "Time before which the login hint token SHOULD NOT be accepted for processing.",
+      "examples": [1496397168]
+    },
+    "iss": {
+      "$id": "#/properties/iss",
+      "type": "string",
+      "title": "The Issuer of the token",
+      "description": "The value should be the client ID of the third party, unless signed by a different party",
+      "default": "",
+      "examples": ["s6BhdRkqt3"],
+      "pattern": "^(.+)$"
+    },
+    "jti": {
+      "$id": "#/properties/jti",
+      "type": "string",
+      "title": "The unique identifier of the token",
+      "description": "Used for determining token uniqueness. The value should be have sufficient entropy to make likelihood of collisions negligible.",
+      "examples": ["d92f1393-752e-49c2-8ce3-90abc6b29655"]
+    },
+    "sub": {
+      "$id": "/properties/sub",
+      "type": "string",
+      "description": "Subject Identifier, optionally to be consumed by the API provider",
+      "examples": ["AItOawmwtWwcT0k51BayewNvutrJUqsvl6qs7A4"]
     }
   }
 }
