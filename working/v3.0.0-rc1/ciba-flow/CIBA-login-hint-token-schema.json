@@ -32,7 +32,8 @@
           "$id": "/properties/subject/properties/phone",
           "type": "string",
           "title": "The phone of the subject identity to authorise",
-          "examples": ["+64-21-101-1221"]
+          "pattern": "^\\+[0-9]{1,3}\\s?[0-9]{1,14}(\\s[0-9]{1,13})?$",
+          "examples": ["+64 211011221", "+64211011221", "+64 21 1011221"]
         },
         "email": {
           "$id": "/properties/subject/properties/email",
