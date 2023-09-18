@@ -1,0 +1,278 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Schema for NZ Banking Security Profile Authorisation Server Metadata",
+    "$id": "http://apicentre.paymentsnz.co.nz/schemas/metadata-schema.json",
+    "additionalProperties": true,
+    "type": "object",
+    "properties": {
+        "authorization_endpoint": {
+            "type": "string"
+        },
+        "backchannel_authentication_endpoint": {
+            "type": "string"
+        },
+        "backchannel_authentication_request_signing_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "backchannel_token_delivery_modes_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "backchannel_user_code_parameter_supported": {
+            "type": "boolean"
+        },
+        "claim_types_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "claims_locales_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "claims_parameter_supported": {
+            "type": "boolean"
+        },
+        "claims_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "code_challenge_methods_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "grant_types_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "id_token_encryption_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "id_token_encryption_enc_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "id_token_signing_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "introspection_endpoint": {
+            "type": "string"
+        },
+        "introspection_endpoint_auth_methods_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "introspection_endpoint_auth_signing_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "issuer": {
+            "type": "string"
+        },
+        "jwks_uri": {
+            "type": "string"
+        },
+        "mtls_endpoint_aliases": {
+            "type": "object",
+            "properties": {
+                "token_endpoint": {
+                    "type": "string"
+                },
+                "revocation_endpoint": {
+                    "type": "string"
+                },
+                "introspection_endpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "token_endpoint",
+                "revocation_endpoint",
+                "introspection_endpoint"
+            ],
+            "additionalProperties": false
+        },
+        "op_policy_uri": {
+            "type": "string"
+        },
+        "op_tos_uri": {
+            "type": "string"
+        },
+        "pushed_authorization_request_endpoint": {
+            "type": "string"
+        },
+        "request_object_encryption_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "request_object_encryption_enc_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "request_object_signing_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "request_parameter_supported": {
+            "type": "boolean"
+        },
+        "request_uri_parameter_supported": {
+            "type": "boolean"
+        },
+        "require_pushed_authorization_requests": {
+            "type": "boolean"
+        },
+        "require_request_uri_registration": {
+            "type": "boolean"
+        },
+        "require_signed_request_object": {
+            "type": "boolean"
+        },
+        "response_modes_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "response_types_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "revocation_endpoint": {
+            "type": "string"
+        },
+        "revocation_endpoint_auth_methods_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "revocation_endpoint_auth_signing_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "scopes_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "service_documentation": {
+            "type": "string"
+        },
+        "subject_types_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tls_client_certificate_bound_access_tokens": {
+            "type": "boolean"
+        },
+        "token_endpoint": {
+            "type": "string"
+        },
+        "token_endpoint_auth_methods_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "token_endpoint_auth_signing_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "ui_locales_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "userinfo_encryption_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "userinfo_encryption_enc_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "userinfo_endpoint": {
+            "type": "string"
+        },
+        "userinfo_signing_alg_values_supported": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "authorization_endpoint",
+        "backchannel_authentication_endpoint",
+        "backchannel_authentication_request_signing_alg_values_supported",
+        "backchannel_token_delivery_modes_supported",
+        "backchannel_user_code_parameter_supported",
+        "claims_parameter_supported",
+        "code_challenge_methods_supported",
+        "id_token_signing_alg_values_supported",
+        "introspection_endpoint",
+        "introspection_endpoint_auth_methods_supported",
+        "introspection_endpoint_auth_signing_alg_values_supported",
+        "issuer",
+        "jwks_uri",
+        "pushed_authorization_request_endpoint",
+        "request_object_signing_alg_values_supported",
+        "request_parameter_supported",
+        "request_uri_parameter_supported",
+        "require_signed_request_object",
+        "response_types_supported",
+        "scopes_supported",
+        "subject_types_supported",
+        "tls_client_certificate_bound_access_tokens",
+        "token_endpoint",
+        "token_endpoint_auth_methods_supported",
+        "token_endpoint_auth_signing_alg_values_supported"
+    ]
+}
