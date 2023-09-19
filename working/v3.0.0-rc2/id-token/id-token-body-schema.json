@@ -17,20 +17,20 @@
   ],
   "properties": {
     "iss": {
-      "$id": "/properties/iss",
+      "$id": "#/properties/iss",
       "type": "string",
       "format": "uri",
       "description": "Token issuer - e.g. https://secure.examplebank.co.nz/token",
       "examples": ["https://secure.examplebank.co.nz/token"]
     },
     "sub": {
-      "$id": "/properties/sub",
+      "$id": "#/properties/sub",
       "type": "string",
       "description": "Subject Identifier, intended to be consumed by the Client. It must be a locally unique, never reassigned and opaque identifier within the Issuer for the End-User.",
       "examples": ["AItOawmwtWwcT0k51BayewNvutrJUqsvl6qs7A4"]
     },
     "aud": {
-      "$id": "/properties/aud",
+      "$id": "#/properties/aud",
       "description": "The audience for the token, must contain the Client ID of the third party.  May also contain other audiences.",
       "oneOf": [
         {
@@ -40,7 +40,7 @@
         {
           "type": "array",
           "items": {
-            "$id": "/properties/aud/items",
+            "$id": "#/properties/aud/items",
             "type": "string"
           },
           "description": "Audience(s) that this ID Token is intended for. It MUST contain the OAuth 2.0 client_id of the Relying Party as an audience value.",
@@ -52,49 +52,49 @@
       ]
     },
     "ConsentId": {
-      "$id": "/properties/ConsentId",
+      "$id": "#/properties/ConsentId",
       "type": "string",
       "pattern": "^(.+)$",
       "description": "The ID of the consent to which this token is related",
       "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
     },
     "exp": {
-      "$id": "/properties/exp",
+      "$id": "#/properties/exp",
       "type": "integer",
       "description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
       "examples": [1496397168]
     },
     "iat": {
-      "$id": "/properties/iat",
+      "$id": "#/properties/iat",
       "type": "integer",
       "description": "Time at which the JWT was issued.",
       "examples": [1496361168]
     },
     "nonce": {
-      "$id": "/properties/nonce",
+      "$id": "#/properties/nonce",
       "type": "string",
       "description": "String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token as the nonce claim. Clients MUST verify that the nonce claim value is equal to the value of the nonce parameter sent in the Authentication Request.",
       "examples": ["n-0S6_WzA2Mj"]
     },
     "amr": {
-      "$id": "/properties/amr",
+      "$id": "#/properties/amr",
       "type": "array",
       "items": {
-        "$id": "/properties/amr/items",
+        "$id": "#/properties/amr/items",
         "type": "string"
       },
       "description": "Authentication Methods References.",
       "examples": ["pwd"]
     },
     "azp": {
-      "$id": "/properties/azp",
+      "$id": "#/properties/azp",
       "type": "string",
       "pattern": "^(.+)$",
       "description": "Authorised party to which the token is issued.  This is the the third party, rather than the customer",
       "examples": ["20353a34-8be1-4c76-a0ae-4b8c1bbf9ec6"]
     },
     "auth_time": {
-      "$id": "/properties/auth_time",
+      "$id": "#/properties/auth_time",
       "type": "integer",
       "description": "Time when the End-User authentication occurred.",
       "examples": [1496361168]

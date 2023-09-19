@@ -41,19 +41,19 @@
       ]
     },
     "iat":{
-      "$id": "/properties/iat",
+      "$id": "#/properties/iat",
       "type": "integer",
       "description": "Time on which the Request Object was issued. May be used for determining age",
       "examples": [1496397168]
     },
     "exp": {
-      "$id": "/properties/exp",
+      "$id": "#/properties/exp",
       "type": "integer",
       "description": "Expiration time on or after which the Request Object MUST NOT be accepted for processing.",
       "examples": [1496397168]
     },
     "nbf": {
-      "$id": "/properties/nbf",
+      "$id": "#/properties/nbf",
       "type": "integer",
       "description": "Time before which the Request Object MUST NOT be accepted for processing.",
       "examples": [1496397168]

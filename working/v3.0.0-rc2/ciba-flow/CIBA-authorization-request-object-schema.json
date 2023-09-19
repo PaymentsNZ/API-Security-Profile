@@ -38,25 +38,25 @@
       "pattern": "^(.+)$"
     },
     "exp": {
-      "$id": "/properties/exp",
+      "$id": "#/properties/exp",
       "type": "integer",
       "description": "Expiration time on or after which the Request Object MUST NOT be accepted for processing.",
       "examples": [1496397168]
     },
     "iat": {
-      "$id": "/properties/iat",
+      "$id": "#/properties/iat",
       "type": "integer",
       "description": "Time at which the JWT was issued.",
       "examples": [1496361168]
     },
     "nbf": {
-      "$id": "/properties/nbf",
+      "$id": "#/properties/nbf",
       "type": "integer",
       "description": "The time before which the ID Token MUST NOT be accepted for processing.",
       "examples": [1496397168]
     },
     "jti": {
-      "$id": "/properties/jti",
+      "$id": "#/properties/jti",
       "type": "string",
       "description": "The unique identifier of the current JWT token",
       "examples": ["b8fd0a32-5e00-4b73-b3d8-b4af743b26e8"],
@@ -72,7 +72,7 @@
       "pattern": "^openid([ ].*)*$"
     },
     "ConsentId": {
-      "$id": "/properties/ConsentId",
+      "$id": "#/properties/ConsentId",
       "type": "string",
       "pattern": "^(.+)$",
       "description": "The ID of the consent to which this token is related",
@@ -90,33 +90,33 @@
       ]
     },
     "login_hint_token": {
-      "$id": "/properties/login_hint_token",
+      "$id": "#/properties/login_hint_token",
       "type": "string",
       "description": "A JWT token containing information to be used as a hint to the user identity"
     },
     "id_token_hint": {
-      "$id": "/properties/id_token_hint",
+      "$id": "#/properties/id_token_hint",
       "type": "string",
       "description": "An ID token that was previously issued to the third party being replayed as a hint to the user identity"
     },
     "requested_expiry": {
-      "$id": "/properties/requested_expiry",
+      "$id": "#/properties/requested_expiry",
       "type": "integer",
       "description": "A positive integer allowing the third party to request the expires_in value for auth_req_id the API provider will return",
       "examples": [300]
     },
     "binding_message": {
-      "$id": "/properties/binding_message",
+      "$id": "#/properties/binding_message",
       "type": "string",
       "description": "A human-readable identifier or message intended to be displayed on both the consumption device and the authentication device to interlock them"
     },
     "user_code": {
-      "$id": "/properties/user_code",
+      "$id": "#/properties/user_code",
       "type": "string",
       "description": "A secret code, such as a password or pin, that is known only to the user but verifiable by the authorisation server"
     },
     "request_context": {
-      "$id": "/properties/request_context",
+      "$id": "#/properties/request_context",
       "type": "object",
       "description": "A JSON object containing information to inform fraud and threat decisions.  See CIBA FAPI."
     }
