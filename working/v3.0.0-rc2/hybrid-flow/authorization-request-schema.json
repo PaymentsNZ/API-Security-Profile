@@ -150,7 +150,7 @@
       "examples": ["en-nz", "mi", "en-nz mi"]
     },
     "id_token_hint": {
-      "$id": "/properties/id_token_hint",
+      "$id": "#/properties/id_token_hint",
       "type": "string",
       "description": "An ID token that was previously issued to the third party being replayed as a hint to the user identity"
     },
