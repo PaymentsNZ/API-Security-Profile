@@ -4,7 +4,7 @@
   "$id": "http://apicentre.paymentsnz.co.nz/schemas/authorization-request-schema.json",
   "type": "object",
   "title": "The schema for the Authorisation Request (OIDC/FAPI compliant) token",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "required": [
     "aud",
     "iss",
@@ -130,6 +130,35 @@
       "title": "Third-party specified maximum authentication age",
       "default": 0,
       "examples": [86400]
+    },
+    "display": {
+      "$id": "#/properties/display",
+      "type": "string",
+      "title": "Specify how to display authentication and consent to customer",
+      "enum": ["page", "popup", "touch", "wap"]
+    },
+    "prompt": {
+      "$id": "#/properties/prompt",
+      "type": "string",
+      "title": "Specify whether the authorisation server should prompt for authentication and consent to customer",
+      "examples": ["none", "login consent", "consent", "select_account"]
+    },
+    "ui_locales": {
+      "$id": "#/properties/ui_locales",
+      "type": "string",
+      "title": "Specify preferred languages to display authentication and consent to customer",
+      "examples": ["en-nz", "mi", "en-nz mi"]
+    },
+    "id_token_hint": {
+      "$id": "/properties/id_token_hint",
+      "type": "string",
+      "description": "An ID token that was previously issued to the third party being replayed as a hint to the user identity"
+    },
+    "claims_locales":{
+      "$id": "#/properties/claims_locales",
+      "type": "string",
+      "title": "Specify preferred languages to return claims to third party",
+      "examples": ["en-nz", "mi", "en-nz mi"]
     },
     "claims": {
       "$id": "#/properties/claims",

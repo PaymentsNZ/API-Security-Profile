@@ -104,6 +104,21 @@
       "type": "integer",
       "description": "A positive integer allowing the third party to request the expires_in value for auth_req_id the API provider will return",
       "examples": [300]
+    },
+    "binding_message": {
+      "$id": "/properties/binding_message",
+      "type": "string",
+      "description": "A human-readable identifier or message intended to be displayed on both the consumption device and the authentication device to interlock them"
+    },
+    "user_code": {
+      "$id": "/properties/user_code",
+      "type": "string",
+      "description": "A secret code, such as a password or pin, that is known only to the user but verifiable by the authorisation server"
+    },
+    "request_context": {
+      "$id": "/properties/request_context",
+      "type": "object",
+      "description": "A JSON object containing information to inform fraud and threat decisions.  See CIBA FAPI."
     }
   }
 }
