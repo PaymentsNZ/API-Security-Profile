@@ -1,4 +1,4 @@
-# V3.0.0-rc1 schemas
+# V3.0.0-rc2 schemas
 
 This folder contains schemas for the V3.0.0 security profile. This includes:
 
