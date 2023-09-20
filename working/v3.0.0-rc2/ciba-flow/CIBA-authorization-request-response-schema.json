@@ -8,7 +8,7 @@
   "required": ["auth_req_id", "expires_in"],
   "properties": {
     "auth_req_id": {
-      "$id": "/properties/auth_req_id",
+      "$id": "#/properties/auth_req_id",
       "type": "string",
       "description": "This is a unique identifier for the authentication request made by the CIBA Client (third party)",
       "minLength": 22,
@@ -16,14 +16,14 @@
       "examples": ["1c26_6114-a1be-4252-8ad1-04986c5b.9ac1"]
     },
     "expires_in": {
-      "$id": "/properties/expires_in",
+      "$id": "#/properties/expires_in",
       "type": "integer",
       "exclusiveMinimum": 0,
       "description": "A positive integer value in seconds, indicating the expiration time since the authentication request was received",
       "examples": [3600]
     },
     "interval": {
-      "$id": "/properties/interval",
+      "$id": "#/properties/interval",
       "type": "integer",
       "minimum": 0,
       "description": "The number of seconds a client MUST wait between polling requests to the token endpoint",

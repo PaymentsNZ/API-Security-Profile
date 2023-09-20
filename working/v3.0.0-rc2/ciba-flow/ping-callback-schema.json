@@ -8,7 +8,7 @@
   "required": ["auth_req_id"],
   "properties": {
     "auth_req_id": {
-      "$id": "/properties/auth_req_id",
+      "$id": "#/properties/auth_req_id",
       "type": "string",
       "description": "This is a unique identifier for the authentication request made by the CIBA Client (third party)",
       "format": "uuid",
