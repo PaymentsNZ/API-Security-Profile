@@ -1,0 +1,69 @@
+{
+    "title": "Version 1 of JARM response payload",
+    "$id": "http://apicentre.paymentsnz.co.nz/schemas/jarm-response-schema.json",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "required": [
+      "iss",
+      "code",
+      "aud",
+      "exp",
+      "state"
+    ],
+    "properties": {
+      "iss": {
+        "$id": "#/properties/iss",
+        "type": "string",
+        "format": "uri",
+        "minLength": 1,
+        "description": "Token issuer - e.g. https://secure.examplebank.co.nz/token",
+        "examples": ["https://secure.examplebank.co.nz/token"]
+      },
+      "code": {
+        "$id": "#/properties/code",
+        "type": "string",
+        "minLength": 1,
+        "description": "Authorization Code, to be exchanged for Access Token.",
+        "examples": ["AItOawmwtWwcT0k51BayewNvutrJUqsvl6qs7A4"]
+      },
+      "aud": {
+        "$id": "#/properties/aud",
+        "description": "The audience for the token, must contain the Client ID of the third party.  May also contain other audiences.",
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "examples": ["third_party_client_id", "sadUTdfTANIhditInecaqwEZdsUL"]
+          },
+          {
+            "type": "array",
+            "items": {
+              "$id": "#/properties/aud/items",
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Audience(s) that this ID Token is intended for. It MUST contain the OAuth 2.0 client_id of the Relying Party as an audience value.",
+            "examples": [
+              "third_party_client_id",
+              "ERVWyYqQM6AstKLmpuQdTiK8or02pe1i"
+            ]
+          }
+        ]
+      },
+      "exp": {
+        "$id": "#/properties/exp",
+        "type": "integer",
+        "description": "Expiration time on or after which the ID Token MUST NOT be accepted for processing.",
+        "examples": [1496397168]
+      },
+      "state": {
+        "$id": "#/properties/state",
+        "type": "string",
+        "minLength": 1,
+        "description": "The state value as sent by the client in the authorization request",
+        "examples": ["sadrewvdHASDTAW"]
+      }
+    }
+  }
+  
