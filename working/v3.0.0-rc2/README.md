@@ -17,7 +17,15 @@ These are assistive in nature, and supplementary to the Security Profile documen
 One method of validating test data with JSON schemas is to use `ajv`, via:
 
 ```bash
-npx ajv-cli --strict=false -s .\schema.json -d .\data.json
+npx ajv validate -c ajv-formats -s .\schema.json -d .\data.json
 ```
 
-__Note:__ the `--strict=false` is a `ajv` workaround for "format": "uri", which is valid JSON schema in draft-07, but not recognised by `ajv`
+This requires the install of both `ajv` and `ajv-formats` via:
+
+```bash
+npm install ajv ajv-formats
+```
+
+__Note:__ the `-c ajv-formats` is a `ajv` extension to enable `"format": "uri"`, which is valid JSON schema in draft-07, but not recognised by `ajv`
+
+It is also possible to include the option `--spec=draft7` to ensure the validation of schemas using the draft-07 standard (which is used in the Security Profile).
