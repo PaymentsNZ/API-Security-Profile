@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Schema for NZ Banking Security Profile Authorisation Server Metadata",
-    "$id": "http://apicentre.paymentsnz.co.nz/schemas/metadata-schema.json",
+    "$id": "http://apicentre.paymentsnz.co.nz/schemas/authorisation-server-metadata-schema.json",
     "additionalProperties": true,
     "type": "object",
     "properties": {
