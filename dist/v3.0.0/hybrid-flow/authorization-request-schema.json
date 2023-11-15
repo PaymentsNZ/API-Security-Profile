@@ -20,7 +20,6 @@
   ],
   "properties": {
     "aud": {
-      "$id": "#/properties/aud",
       "title": "The audiences for the token",
       "description": "The value should be or include the API Provider Issuer Identifier URL",
       "oneOf": [
@@ -31,7 +30,6 @@
         },
         {
           "type": "array",
-          "$id": "#/properties/aud/items",
           "items": {
             "type": "string",
             "pattern": "^(.+)$"
@@ -41,25 +39,21 @@
       ]
     },
     "iat":{
-      "$id": "#/properties/iat",
       "type": "integer",
       "description": "Time on which the Request Object was issued. May be used for determining age",
       "examples": [1496397168]
     },
     "exp": {
-      "$id": "#/properties/exp",
       "type": "integer",
       "description": "Expiration time on or after which the Request Object MUST NOT be accepted for processing.",
       "examples": [1496397168]
     },
     "nbf": {
-      "$id": "#/properties/nbf",
       "type": "integer",
       "description": "Time before which the Request Object MUST NOT be accepted for processing.",
       "examples": [1496397168]
     },
     "iss": {
-      "$id": "#/properties/iss",
       "type": "string",
       "title": "The Issuer of the token",
       "description": "The value should be the client ID of the third party, unless signed by a different party",
@@ -68,14 +62,12 @@
       "pattern": "^(.+)$"
     },
     "jti": {
-      "$id": "#/properties/jti",
       "type": "string",
       "title": "The unique identifier of the token",
       "description": "Used for determining token uniqueness. The value should be have sufficient entropy to make likelihood of collisions negligible.",
       "examples": ["d92f1393-752e-49c2-8ce3-90abc6b29655"]
     },
     "response_type": {
-      "$id": "#/properties/response_type",
       "type": "string",
       "title": "The type of the response token",
       "default": "code id_token",
@@ -83,7 +75,6 @@
       "enum": ["code id_token"]
     },
     "client_id": {
-      "$id": "#/properties/client_id",
       "type": "string",
       "title": "The ID of the third-party client",
       "default": "",
@@ -91,7 +82,6 @@
       "pattern": "^(.+)$"
     },
     "redirect_uri": {
-      "$id": "#/properties/redirect_uri",
       "type": "string",
       "title": "The URI to which to redirect the customer User Agent",
       "default": "",
@@ -99,7 +89,6 @@
       "format": "uri"
     },
     "scope": {
-      "$id": "#/properties/scope",
       "type": "string",
       "title": "The OAuth scopes requested",
       "description": "Must include 'openid' and any other scopes required",
@@ -108,7 +97,6 @@
       "pattern": "^openid([ ].*)*$"
     },
     "state": {
-      "$id": "#/properties/state",
       "type": "string",
       "title": "The third-party specific state",
       "description": "Opaque to API provider",
@@ -117,7 +105,6 @@
       "pattern": "^(.+)$"
     },
     "nonce": {
-      "$id": "#/properties/nonce",
       "type": "string",
       "title": "Third party nonce to avoid replay",
       "default": "",
@@ -125,64 +112,54 @@
       "pattern": "^(.+)$"
     },
     "max_age": {
-      "$id": "#/properties/max_age",
       "type": "integer",
       "title": "Third-party specified maximum authentication age",
       "default": 0,
       "examples": [86400]
     },
     "display": {
-      "$id": "#/properties/display",
       "type": "string",
       "title": "Specify how to display authentication and consent to customer",
       "enum": ["page", "popup", "touch", "wap"]
     },
     "prompt": {
-      "$id": "#/properties/prompt",
       "type": "string",
       "title": "Specify whether the authorisation server should prompt for authentication and consent to customer",
       "examples": ["none", "login consent", "consent", "select_account"]
     },
     "ui_locales": {
-      "$id": "#/properties/ui_locales",
       "type": "string",
       "title": "Specify preferred languages to display authentication and consent to customer",
       "examples": ["en-nz", "mi", "en-nz mi"]
     },
     "id_token_hint": {
-      "$id": "#/properties/id_token_hint",
       "type": "string",
       "description": "An ID token that was previously issued to the third party being replayed as a hint to the user identity"
     },
     "claims_locales":{
-      "$id": "#/properties/claims_locales",
       "type": "string",
       "title": "Specify preferred languages to return claims to third party",
       "examples": ["en-nz", "mi", "en-nz mi"]
     },
     "claims": {
-      "$id": "#/properties/claims",
       "type": "object",
       "title": "Claims object that holds the id_token request",
       "additionalProperties": true,
       "required": ["id_token"],
       "properties": {
         "id_token": {
-          "$id": "#/properties/claims/properties/id_token",
           "type": "object",
           "title": "The ID token request claims",
           "additionalProperties": true,
           "required": ["ConsentId"],
           "properties": {
             "ConsentId": {
-              "$id": "#/properties/claims/properties/id_token/properties/ConsentId",
               "type": "object",
               "title": "The Consent ID object",
               "additionalProperties": false,
               "required": ["value", "essential"],
               "properties": {
                 "value": {
-                  "$id": "#/properties/claims/properties/id_token/properties/ConsentId/properties/value",
                   "type": "string",
                   "title": "The value of Consent ID",
                   "default": "",
@@ -190,7 +167,6 @@
                   "pattern": "^(.+)$"
                 },
                 "essential": {
-                  "$id": "#/properties/claims/properties/id_token/properties/ConsentId/properties/essential",
                   "type": "boolean",
                   "title": "Essential claim identifier",
                   "default": false,

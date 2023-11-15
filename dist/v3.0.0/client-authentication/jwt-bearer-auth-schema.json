@@ -8,7 +8,6 @@
   "required": ["jti", "sub", "iss", "aud", "exp"],
   "properties": {
     "jti": {
-      "$id": "#/properties/jti",
       "type": "string",
       "description": "The JWT token identifier that must be unique and used only once",
       "default": "",
@@ -16,7 +15,6 @@
       "pattern": "^(.*)$"
     },
     "sub": {
-      "$id": "#/properties/sub",
       "type": "string",
       "description": "The JWT subject, which must be client_id",
       "default": "",
@@ -24,7 +22,6 @@
       "pattern": "^(.*)$"
     },
     "iss": {
-      "$id": "#/properties/iss",
       "type": "string",
       "description": "The JWT issuer, which must be client_id",
       "default": "",
@@ -32,28 +29,24 @@
       "pattern": "^(.*)$"
     },
     "aud": {
-      "$id": "#/properties/aud",
       "type": "string",
       "format": "uri",
       "description": "The audience for the JWT, which must be the authorisation server and should be the token endpoint",
       "examples": ["http://examplebank.co.nz/oauth2/token"]
     },
     "exp": {
-      "$id": "#/properties/exp",
       "type": "integer",
       "description": "The time the JWT expires",
       "default": 0,
       "examples": [1536165540]
     },
     "iat": {
-      "$id": "#/properties/iat",
       "type": "integer",
       "description": "The time the JWT was issued by authorisation server",
       "default": 0,
       "examples": [1536132708]
     },
     "nbf": {
-      "$id": "#/properties/nbf",
       "type": "integer",
       "description": "The time before which the token should not be accepted",
       "default": 0,
