@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://apicentre.paymentsnz.co.nz/schemas/jwt-bearer-auth-schema.json",
+  "type": "object",
+  "title": "The schema used with JWT authentication",
+  "description": "The schema to be used with private_key_jwt as specified by OIDC core final 1.0",
+  "additionalProperties": true,
+  "required": ["jti", "sub", "iss", "aud", "exp"],
+  "properties": {
+    "jti": {
+      "type": "string",
+      "description": "The JWT token identifier that must be unique and used only once",
+      "default": "",
+      "examples": ["992267bc-8e1c-4909-b4f4-4f47b652f748"],
+      "pattern": "^(.*)$"
+    },
+    "sub": {
+      "type": "string",
+      "description": "The JWT subject, which must be client_id",
+      "default": "",
+      "examples": ["38174623762"],
+      "pattern": "^(.*)$"
+    },
+    "iss": {
+      "type": "string",
+      "description": "The JWT issuer, which must be client_id",
+      "default": "",
+      "examples": ["38174623762"],
+      "pattern": "^(.*)$"
+    },
+    "aud": {
+      "type": "string",
+      "format": "uri",
+      "description": "The audience for the JWT, which must be the authorisation server and should be the token endpoint",
+      "examples": ["http://examplebank.co.nz/oauth2/token"]
+    },
+    "exp": {
+      "type": "integer",
+      "description": "The time the JWT expires",
+      "default": 0,
+      "examples": [1536165540]
+    },
+    "iat": {
+      "type": "integer",
+      "description": "The time the JWT was issued by authorisation server",
+      "default": 0,
+      "examples": [1536132708]
+    },
+    "nbf": {
+      "type": "integer",
+      "description": "The time before which the token should not be accepted",
+      "default": 0,
+      "examples": [1536132708]
+    }
+  }
+}
