@@ -9,3 +9,7 @@ This folder contains schemas for the V2.3.4 security profile. This includes:
 - Generic JWS header [schema](./common/JOSE-header-schema.json)
 
 These are assistive in nature, and supplementary to the Security Profile documentation. It is highly recommended to follow that documentation first.
+
+### Changes
+
+- Patch version uplift only. This is to keep it in line with the published version descriptions on Confluence.

@@ -11,3 +11,7 @@ This folder contains schemas for the V3.0.2 security profile. This includes:
 - Authorisation Server Metadata [schema](authorization-server-metadata/metadata-schema.json)
 
 These are assistive in nature, and supplementary to the Security Profile documentation. It is highly recommended to follow that documentation first.
+
+### Changes
+
+- Patch version uplift only. This is to keep it in line with the published version descriptions on Confluence.
