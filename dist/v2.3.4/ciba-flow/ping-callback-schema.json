@@ -1,0 +1,18 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://apicentre.paymentsnz.co.nz/schemas/ping-callback-schema.json",
+  "type": "object",
+  "title": "The schema for the CIBA callback request",
+  "additionalProperties": false,
+  "required": ["auth_req_id"],
+  "properties": {
+    "auth_req_id": {
+      "$id": "/properties/auth_req_id",
+      "type": "string",
+      "description": "This is a unique identifier for the authentication request made by the CIBA Client (third party)",
+      "pattern": "^[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}$",
+      "examples": ["1c266114-a1be-4252-8ad1-04986c5b9ac1"]
+    }
+  }
+}
