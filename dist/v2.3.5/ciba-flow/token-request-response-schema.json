@@ -1,0 +1,45 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://apicentre.paymentsnz.co.nz/schemas/token-request-response-schema.json",
+  "type": "object",
+  "title": "The schema for the Open ID Connect token request response",
+  "additionalProperties": false,
+  "required": ["access_token", "token_type", "expires_in", "id_token"],
+  "properties": {
+    "access_token": {
+      "$id": "/properties/access_token",
+      "type": "string",
+      "title": "Access token",
+      "description": "The token to be used on subsequent API requests",
+      "examples": ["G5kXH2wHvUra0sHlDy1iTkDJgsgUO1bN"]
+    },
+    "token_type": {
+      "$id": "/properties/token_type",
+      "type": "string",
+      "title": "The OAuth 2.0 token type",
+      "enum": ["Bearer", "mac"]
+    },
+    "refresh_token": {
+      "$id": "/properties/refresh_token",
+      "type": "string",
+      "title": "Refresh token",
+      "description": "The token to be used to refresh the access token",
+      "examples": ["4bwc0ESC_IAhflf-ACC_vjD_ltc11ne-8gFPfA2Kx16"]
+    },
+    "expires_in": {
+      "$id": "/properties/expires_in",
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "title": "Access token expiry time",
+      "description": "A positive integer value in seconds, indicating the expiration time since the authentication request was received",
+      "examples": [3600]
+    },
+    "id_token": {
+      "$id": "/properties/id_token",
+      "type": "string",
+      "title": "The ID Token issued to the third party",
+      "pattern": "^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_.+/=]*$"
+    }
+  }
+}
